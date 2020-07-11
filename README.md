@@ -2,6 +2,15 @@
 
 An Online food Ordering app
 
+### Screen shots
+
+[Homepage](/screenshots/1.png?raw=true)
+[Homepage2](/screenshots/2.png?raw=true)
+[Item page](/screenshots/3.png?raw=true)
+[Cart](/screenshots/4.png?raw=true)
+[User](/screenshots/5.png?raw=true)
+[Checkout](/screenshots/6.png?raw=true)
+
 ### Runing the Foodlust website on your system:
 
 1. Make sure you have Python 3 and pip setup on your computer.
