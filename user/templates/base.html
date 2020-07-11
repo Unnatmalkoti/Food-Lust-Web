@@ -1,0 +1,78 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{%static 'css/base.css'%}" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    {%block head%} {%endblock%}
+    <title>Food Lust</title>
+    <!-- <link
+      href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500&display=swap"
+      rel="stylesheet"
+    /> -->
+  </head>
+  <body>
+    <nav>
+      <div class="wrapper">
+        <div>
+          <h1><a href="/">FoodLust</a></h1>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li>Offers</li>
+            <li>Menu</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+
+        <span>
+          {%if request.user.is_authenticated%}
+          <div class="user-dropdown-container">
+            <button onclick="toggleDropDown()">
+              {{request.user.username|title}}
+            </button>
+            <ul id="user-dropdown">
+              <li><a>Profile</a></li>
+              {% comment %} <li><a href="{%url 'my-orders'%}">My Orders</a></li> {% endcomment %}
+              {%if request.user.is_superuser%}
+              <li><a href="{%url 'all-orders'%}">Manage Orders</a></li>
+              {%endif%} 
+              {%if user_profile.is_delivery_guy%}
+              <li><a href="{%url 'deliveries'%}">Deliveries</a></li>
+              {%endif%}
+              {% comment %} <li><a href="{%url 'logout'%}">Logout</a></li> {% endcomment %}
+            </ul>
+          </div>
+          {%else%} <a href="{%url 'account_login'%}">Login</a>{%endif%} |
+          <span
+            style="padding: 5px; cursor: pointer;"
+            onclick="document.getElementsByClassName('cart')[0].classList.add('opened')"
+            >Cart {{cart_items|length}}</span
+          ></span
+        >
+      </div>
+    </nav>
+    <main>
+      {%block content%}{%endblock%}
+    </main>
+    <aside class="cart">
+      <div>
+        <h2>
+          <button
+            onclick="document.getElementsByClassName('cart')[0].classList.remove('opened')"
+            class="close"
+          >
+            X
+          </button>
+          Your cart
+        </h2>
+        <ul class="cart-item-list"></ul>
+      </div>
+
+      <div class="cart-bottom"></div>
+    </aside>
+    <script src="{%static 'js/base.js'%}"></script>
+  </body>
+</html>

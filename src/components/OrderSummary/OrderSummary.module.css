@@ -1,0 +1,43 @@
+.PageTitle {
+  font-family: "Open Sans";
+  color: #ff5887;
+  font-weight: 100;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.SummaryItem {
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.SummaryItem :nth-child(2) {
+  font-weight: 500;
+}
+
+.AdditionalCharges .SummaryItem {
+  font-size: 12px;
+  font-weight: 100;
+  color: #898989;
+  margin: 5px 0;
+}
+
+.AdditionalCharges .SummaryItem:nth-child(2) {
+  color: #696969;
+}
+
+.Total {
+  font-size: 16px;
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  border-top: 1px #0000001a solid;
+  padding-top: 10px;
+  color: #ff5887;
+  margin-bottom: 60px;
+}
+
+.Total :nth-child(2) {
+  font-weight: 500;
+}

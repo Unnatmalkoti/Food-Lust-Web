@@ -1,0 +1,52 @@
+main
+{
+    margin: 85px 0;
+}
+h1.page-title  
+{
+    font-size: 36px;
+}
+.sidetab
+{
+    background: #fff;
+    width: 23%;
+}
+
+.sidetab a
+{
+    text-decoration: none;
+}
+
+.sidetab ul
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding: 40px 0px;
+}
+
+.sidetab li 
+{
+    padding: 15px 40px;
+}
+
+.sidetab li:hover 
+{
+    background-color: #eee;
+}
+.sidetab li.active
+{
+    background-color: #FF5887;
+    color: white;
+}
+
+.content-wrapper{
+display: flex;
+}
+
+.content
+{
+    height: 200px;
+    width: 100%;
+    margin-left: 20px;
+}

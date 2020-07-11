@@ -1,0 +1,48 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Sign Up!</title>
+    <link rel="stylesheet" href="{%static 'css/login.css'%}">
+</head>
+<body>
+    <main>
+        <div class="left">
+            <h1>Food</h1>
+            <h1>Lust</h1>
+            </div>
+            <div class="login-side">
+                <form method="POST">
+                    <h2>Sign Up</h2>
+                    <p>Gotta sign up before signing in.</p>
+                    <div>
+                        {{form.non_field_errors}}
+                    </div>
+                    {%csrf_token%}
+                    <!-- <label for="username">Username</label> -->
+                    {{form.email.errors}}
+                    {{form.email}}
+                    
+                    <!-- <label for="password">Password</label> -->
+                    {{form.username.errors}}
+                    {{form.username}}
+
+                    {{form.password1.errors}}
+                    {{form.password1}}
+
+                    {{form.password2.errors}}
+                    {{form.password2}}
+
+
+
+                    
+                    <input type="submit" value="Sign Up">
+                </form>
+                <p class="bottom-line">Already have an account? Then please <a href="{%url 'account_login'%}">sign in.</a></p>
+            </div>
+    </main>
+    
+</body>
+</html>

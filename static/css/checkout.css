@@ -1,0 +1,147 @@
+.checkout-grid {
+  /* display: grid; */
+  /* grid-template-columns: 2fr 1fr; */
+  display: flex;
+  /* padding: 10px; */
+  margin: auto;
+  grid-gap: 40px;
+}
+
+.left-tab {
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.11);
+  padding: 50px 70px;
+  background-color: #fff;
+}
+
+.left-tabs-container {
+  flex-grow: 1;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+aside {
+  flex-grow: 0;
+  margin-left: 20px;
+}
+
+.btn {
+  font-family: "poppins";
+  background-color: #ff5887;
+  color: white;
+  font-size: 18px;
+  padding: 10px 70px;
+  margin: 10px 0;
+  border: none;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.checkout-grid-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px;
+}
+
+.checkout-grid-container h1 {
+  font-size: 40px;
+}
+
+.cart-summary {
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.11);
+  background-color: #fff;
+  padding: 45px 35px;
+  width: 300px;
+}
+
+.cart-summary .item {
+  font-weight: 300;
+  color: #555;
+  display: flex;
+  justify-content: space-between;
+}
+
+.gst-item {
+  font-weight: 200;
+  color: #555;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.cart-summary .item .highlight {
+  font-weight: 400;
+  padding: 0 5px;
+  color: #ff5887;
+}
+
+.cart-summary .price {
+  font-weight: 400;
+}
+
+.total-item {
+  background: #ff5887;
+  color: white;
+  margin: 30px -35px -40px -35px;
+  padding: 20px 35px;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tab-heading {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 400;
+  color: #555;
+}
+
+.input-box {
+  width: 100%;
+}
+
+.form-line :nth-child(1) {
+  margin-right: 100px;
+}
+
+.form-line :nth-last-child(1) {
+  margin-right: 0px;
+}
+.input-box label {
+  font-size: 12px;
+  display: block;
+  font-weight: 500;
+}
+
+.input-box input {
+  width: 100%;
+  font-size: 16px;
+  padding: 6px;
+  box-sizing: border-box;
+  border: none;
+  font-family: "poppins";
+  display: block;
+  position: relative;
+  border-bottom: #ccc 1.5px solid;
+}
+
+.input-box input:focus {
+  border-bottom-color: #ff5887;
+  outline: none;
+}
+
+.form-line {
+  display: flex;
+  margin: 20px 0px;
+}
+
+h5 {
+  font-weight: 500;
+}
+
+.payment-details p {
+  font-weight: 200;
+  font-weight: 12px;
+  color: #777;
+}

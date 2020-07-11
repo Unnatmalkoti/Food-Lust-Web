@@ -1,0 +1,53 @@
+.Control {
+  display: inline-flex;
+  border-radius: 5px;
+  background-color: #efefef;
+  overflow: hidden;
+}
+
+.Primary.Control {
+  background-color: #ffffff;
+}
+
+.Minus,
+.Plus,
+.Value {
+  width: 33px;
+  /* height: 28px; */
+  color: #999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+}
+
+.Minus svg,
+.Plus svg {
+  width: 16px;
+}
+
+.Primary .Minus svg,
+.Primary .Plus svg {
+  color: #ff5887;
+}
+.Value {
+  background-color: #dfdfdf;
+  color: #5b5b5b;
+}
+
+.Minus,
+.Plus {
+  cursor: pointer;
+}
+
+.Minus:hover,
+.Plus:hover {
+  background-color: #cacaca;
+  color: white;
+}
+
+.Minus:active,
+.Plus:active {
+  background-color: #cecece;
+}

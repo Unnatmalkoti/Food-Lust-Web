@@ -1,0 +1,79 @@
+{%extends 'site-admin/base.html'%} {%load static%} {%block innerhead%}
+<link rel="stylesheet" href="{%static 'css/site-admin/all_orders.css'%}" />
+{%endblock%} {%block innercontent%}
+<section class="all-orders-section">
+  <div class="inner-wrapper">
+    <h1>Orders</h1>
+    <ul class="dashboard">
+      {%for key, orderCategory in orders.items%}
+      <li>
+        <span>{{orderCategory|length}}</span>
+        <p>{{key|lower}}</p>
+      </li>
+      {%endfor%}
+    </ul>
+  </div>
+</section>
+{%for key, orderCategory in orders.items%}
+<section class="orders-list-section">
+  <div class="inner-wrapper">
+    <h1>
+      {{key}}
+    </h1>
+    <div class="orders-grid">
+      <div class="orders-grid-heading">
+        <span>Order Details</span>
+        <span>Instructions</span>
+        <span>Actions</span>
+      </div>
+      {%if orderCategory %} {%for order in orderCategory%}
+      <div class="order-list-item">
+        <div>
+          <p class="order-id">Order Id : <span>{{order.pk}}</span></p>
+          <p class="view-details">
+            <a href="{%url 'order-details' order.pk%}">View Details</a>
+          </p>
+          <p class="date">{{order.placed_at}}</p>
+        </div>
+        <ul>
+          {%for item in order.items.all%}
+          <li>{{item.item.name}} x{{item.quantity}}</li>
+          {%endfor%}
+        </ul>
+        <div>
+          <p>{{order.instructions}}</p>
+        </div>
+        <div>
+          <p></p>
+          <form
+            class="OrderStatusForm"
+            method="POST"
+            action="{%url 'change-order-status'%}"
+          >
+            <input type="hidden" value="{{order.next_status}}" name="status" />
+            <input type="hidden" value="{{order.pk}}" name="pk" />
+            {%csrf_token%} {%if order.next_button_text%}
+            <input
+              class="btn"
+              type="submit"
+              value="{{order.next_button_text}}"
+            />
+            {%endif%}
+          </form>
+        </div>
+      </div>
+      {%endfor%} {%else%}
+      <div class="order-item-none">
+        No orders yet.
+      </div>
+      {%endif%}
+    </div>
+  </div>
+</section>
+
+{%endfor%}
+
+<script>
+    document.getElementById('all-orders-link').classList.add("active");
+</script>
+{%endblock%}

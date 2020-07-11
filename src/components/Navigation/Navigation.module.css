@@ -1,0 +1,16 @@
+.NavBar {
+  /* position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0; */
+  width: 100vw;
+  box-shadow: 0px -2px 30px rgba(0, 0, 0, 0.07);
+  background-color: white;
+  padding: 1px 0;
+}
+
+.NavBar ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 0;
+}

@@ -1,0 +1,65 @@
+.Item {
+  width: 147px;
+  margin: 8px;
+  position: relative;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.Item img {
+  width: 147px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.ItemName {
+  font-weight: 600;
+  font-size: 16px;
+  color: #525252;
+}
+
+.ItemPrice {
+  font-size: 16px;
+  color: #a19797;
+  text-align: right;
+  align-self: center;
+}
+
+.ItemDetails {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  margin-top: 10px;
+}
+
+.Badge {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+  background: #ff5887;
+}
+.Badge span {
+  color: white;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 5;
+}
+.Badge::before {
+  z-index: 4;
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: 35px gray solid;
+  border-color: #ff5887 #ff5887 transparent transparent;
+}
+
+.Badge.Active {
+  display: block;
+}

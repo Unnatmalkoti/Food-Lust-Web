@@ -1,0 +1,47 @@
+{%extends 'site-admin/base.html'%} 
+{%load static%}
+{%block innerhead%}
+<link rel="stylesheet" href="{%static 'css/site-admin/users.css'%}" />
+{%endblock%}
+{%block innercontent%}
+
+<section class="user-section">
+  <div class="inner-wrapper">
+    <h1>Users</h1>
+    <form class="user-search">
+        <input type="text" placeholder="Username, Email or Name" >
+        <input type="submit" value= "Search"> 
+    </form>
+  
+    <div class="userlist">
+        <div class="userlist-header">
+            <span>Username</span>
+            <span>Email</span>
+            <span>Name</span>
+            <span>Status<span>
+        </div>
+        {%for user in users%}
+        <form method="POST">
+            <span>{{user.username}}</span>
+            <span>{{user.email}}</span>
+            <span>{{user.full_name}}</span>
+            <div>
+                {%csrf_token%}
+                <input type="hidden" value="{{user.pk}}" name="user_pk">
+                <select name="status">
+                    <option value="regular_user">Regular User</option>
+                    <option value="delivery_guy"  
+                    {%if user.userprofile_set.all.first.is_delivery_guy%}selected{%endif%}>Delivery Guy</option>
+                    <option value="admin" {%if user.is_superuser%}selected{%endif%}>Admin</option>
+                </select>
+                <input type="submit" value="Save">
+            </div>
+        </form>
+        {%endfor%}
+    </div>
+  </div>
+</section>
+<script>
+    document.getElementById('users-link').classList.add("active");
+</script>
+{%endblock%}

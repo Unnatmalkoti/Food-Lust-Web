@@ -1,0 +1,52 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block head%}
+<link rel="stylesheet" href="{%static 'css/order_details.css'%}">
+{%endblock%}
+
+{%block content%}
+<div class="wrapper">
+    <a class="go-back" onClick="javascript:history.go(-1);">Go back</a>
+    <h1>Order Id: {{order.pk}}</h1>
+    <div class="tabs">
+        <div class="order-box">
+            <div class="user-details">
+                <span>Name:</span><span>{{order.user.username}}</span>
+                <span>Mobile no:</span><span>{{order.mobile}}</span>
+                <span>Email:</span><span>{{order.user.email}}</span>
+            </div>
+            <div class="address">
+                <span>Address line 1:</span><span>{{order.address_line1}}</span>
+                <span>Address line 2:</span><span>{{order.address_line2}}</span>
+                <span>Pincode:</span><span>{{order.pincode}}</span>
+            </div>
+            <div class="order-details">
+                <span>Instructions: </span><span>{{order.instructions}}</span>
+                <span>Status:</span><span>{{order.get_status_display}}</span>
+                <span>Payment Mode:</span><span>{{order.get_paymentMethod_display}}</span>
+            </div>
+        </div>
+        <aside>
+            <div class="cart-summary">
+                {%for item in order.items.all%}
+                <div class="item"><span>{{item.item.name}}
+                    <span class="highlight">X{{item.quantity}}</span></span>
+                    <span class="price">₹{{item.total_cost}}</span>
+                </div>
+                {%endfor%}
+                <div class="gst-item">
+                    <span>GST @{{settings.tax}}%</span>
+                    <span class="price">₹{{order.get_calculated_tax}}</span>
+                </div>
+                <div class="total-item">
+                    <span>Total</span>
+                    <span>₹{{order.get_total}}</span>
+                </div>
+            </div>
+        </aside>
+    </div>
+    
+</div>
+
+{%endblock%}

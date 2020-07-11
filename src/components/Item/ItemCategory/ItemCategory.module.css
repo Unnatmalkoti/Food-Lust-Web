@@ -1,0 +1,18 @@
+.ItemCategoryList {
+  display: flex;
+}
+
+.ItemCategory {
+  margin-top: 50px;
+}
+
+.ItemCategory h2 {
+  text-align: left;
+  font-size: 25px;
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+.Title {
+  text-transform: capitalize;
+}

@@ -1,0 +1,40 @@
+{%extends 'site-admin/base.html'%} 
+{%load static%}
+{%block innerhead%}
+<link rel="stylesheet" href="{%static 'css/site-admin/food-item-list.css'%}" />
+{%endblock%}
+{%block innercontent%}
+
+<section class="food-section">
+    <div class="inner-wrapper">
+    <div class="title">
+        <h1>Food Items</h1>
+        <a href="{% url 'admin-food-create' %}">Create a New Item</a>
+    </div>
+
+    <div class="itemlist">
+        <div class="itemlist-header">
+            <span>Item Name</span>
+            <span>Category</span>
+            <span>Price</span>
+            <span>Status<span>
+        </div>
+        {%for item in food_items%}
+        <form method="POST">
+            <a href="{%url 'admin-foodlist' item.pk%}"><span>{{item.name}}</span></a>
+            <span>{{item.get_category_display}}</span>
+            <span>₹{{item.price}}</span>
+            {%if item.active %}
+            <span class="status-active">Active</span>
+            {%else%}
+            <span class="status-inactive">Inactive</span>
+            {%endif%}
+        </form>
+        {%endfor%}
+    </div>
+  </div>
+</section>
+<script>
+    document.getElementById('food-link').classList.add("active");
+</script>
+{%endblock%}

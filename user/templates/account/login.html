@@ -1,0 +1,39 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{%static 'css/login.css'%}">
+</head>
+<body>
+    <main>
+        <div class="left">
+            <h1>Food</h1>
+            <h1>Lust</h1>
+            </div>
+            <div class="login-side">
+                <form method="POST">
+                    <h2>Login</h2>
+                    <p>Please login to continue.</p>
+                    <div>
+                        {{form.non_field_errors}}
+                    </div>
+                    {%csrf_token%}
+                    <!-- <label for="username">Username</label> -->
+                    {{form.login.errors}}
+                    {{form.login}}
+                    <!-- <label for="password">Password</label> -->
+                    {{form.password.errors}}
+                    {{form.password}}
+                    <div class="rememberxforgot"><span><label for="id_remember">Remember Me</label>{{form.remember}}</span><a class="forgot" href="{%url 'account_reset_password'%}">Forgot Password?</a></div>
+                    
+                    <input class="login" type="submit" value="Login">
+                </form>
+                <p class="bottom-line">If you have not created an account yet, then please <a href="{%url 'account_signup'%}">sign up</a> first.</p>
+            </div>
+    </main>
+    
+</body>
+</html>

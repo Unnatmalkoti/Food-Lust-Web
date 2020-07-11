@@ -1,0 +1,41 @@
+{%extends 'site-admin/base.html'%} 
+{%load static%}
+{%block innerhead%}
+<link rel="stylesheet" href="{%static 'css/site-admin/food-item-detail.css'%}" />
+{%endblock%}
+{%block innercontent%}
+
+<section class="food-section">
+  <div class="inner-wrapper">
+    <a class="go-back" onClick="javascript:history.go(-1);">Go back</a>
+    <div class="title">
+        <h1>{{item.name}}</h1>
+        <a href="{% url 'admin-food-update' item.pk%}">Edit</a>
+    </div>
+    <div class="details-container">
+        <div class="image">
+            {%if item.image%}
+            <img src="{{item.image.url}}">
+            {%endif%}
+        </div>
+        <div class="detail-content">
+            <p><span>Name:</span> {{item.name}}</p>
+            <p><span>Description:</span>  {{item.description}}</p>
+            <p><span>Price:</span>  ₹{{item.price}}</p>
+            <p><span>Category:</span>  {{item.get_category_display}}</p>
+            <p>
+            {%if item.active %}
+                <span class="status-active">Active</p>
+            {%else%}
+                <span class="status-inactive">Inactive</p>
+            {%endif%}
+            </p>
+        </div>
+
+    </div>
+  </div>
+</section>
+<script>
+    document.getElementById('food-link').classList.add("active");
+</script>
+{%endblock%}

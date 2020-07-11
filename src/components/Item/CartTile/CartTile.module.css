@@ -1,0 +1,56 @@
+.CartTile {
+  height: 90px;
+  width: 100%;
+  background-color: #eeeeee;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 90px 3fr 1fr;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.Image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  background-color: #c4c4c4;
+}
+
+.MiddleDiv {
+  display: flex;
+  flex-direction: column;
+  /*align-items: center;
+  justify-content: center;*/
+  padding: 15px 15px;
+  justify-content: space-between;
+}
+
+.MiddleDiv h3 {
+  font-size: 14px;
+  margin: 5px 0;
+  display: inline;
+}
+.MiddleDiv .Category {
+  color: #ff5887;
+  font-size: 10px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.MiddleDiv .Price {
+  font-size: 13px;
+  align-content: flex-end;
+}
+
+.Price {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.QuantityTab {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  padding-right: 15px;
+}

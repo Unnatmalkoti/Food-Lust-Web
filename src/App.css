@@ -1,0 +1,5 @@
+.App {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 0 auto 1fr auto;
+}

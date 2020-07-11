@@ -1,0 +1,26 @@
+{%extends 'base.html'%} 
+{%load static%} 
+{%block head%}
+    <link rel="stylesheet" href="{%static 'css/site-admin/base.css'%}" />
+    {%block innerhead%} {%endblock%}
+{%endblock%}
+
+{%block content%} 
+<div class="admin-container">
+    <div class="admin-dash-nav">
+        <div class="admin-dash-nav-content">
+            <h2>Admin Dashboard</h2>
+            <ul>
+                {% comment %} <li>Today</li> {% endcomment %}
+                <a href="{%url 'all-orders'%}"><li id="all-orders-link">Orders</li></a>
+                <a href="{%url 'admin-userlist'%}"><li id="users-link">Users</li></a>
+                <a href="{%url 'admin-foodlist'%}"><li id="food-link">Food Items</li></a>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="admin-content">
+        {%block innercontent%}{%endblock innercontent%}
+    </div>
+</div>
+{%endblock%}

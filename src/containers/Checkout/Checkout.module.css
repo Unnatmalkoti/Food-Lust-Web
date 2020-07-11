@@ -1,0 +1,13 @@
+.PageTitle {
+  /* margin-top: 70px; */
+  display: flex;
+  align-items: center;
+  font-family: "Poppins";
+  font-weight: 500;
+  transform: translateX(-8px);
+}
+
+.Checkout {
+  padding-bottom: 30px;
+  padding-top: 70px;
+}

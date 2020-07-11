@@ -1,0 +1,36 @@
+{%extends 'users/base.html'%}
+{%load static%}
+
+{%block styles%}
+<link rel="stylesheet" href="{%static 'css/user/orders.css'%}">
+{%endblock%}
+
+{%block innercontent%}
+    {%for order in orders%}
+
+    <div class='order-list-item'>
+        <p class="order-status">
+            {%if order.status == 'N'%}
+                WAITING
+            {%else%}
+                {{order.get_status_display|upper}}
+            {%endif%}
+        </p>
+        <div class="order-item-grid">
+            <div>
+                <p class="order-id">Order Id : <span>{{order.pk}}</span></p>
+                <p class="view-details"><a href="{% url 'order-details' order.pk %}">View Details</a></p>
+                <p class="date">{{order.placed_at}}</p>
+            </div>
+            <ul>
+                {%for item in order.items.all%}
+                <li>{{item.item.name}} <span>x{{item.quantity}}</span></li>
+                {%endfor%}
+            </ul>
+            <div>
+                <p class="total">Total:<span>₹ {{order.total}}</span></p>
+            </div>
+        </div>
+    </div>
+    {%endfor%}
+{%endblock%}

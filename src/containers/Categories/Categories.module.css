@@ -1,0 +1,59 @@
+.Breakfast,
+.Gym,
+.Groceries {
+  border-radius: 10px;
+  margin: 10px 0;
+  position: relative;
+  height: 190px;
+
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.Breakfast::before,
+.Gym::before,
+.Groceries::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    59.36% 87.64% at 13.15% 118.72%,
+    #c4c4c4 0%,
+    #262626 10.42%,
+    rgba(80, 80, 80, 0.501552) 55.07%,
+    rgba(196, 196, 196, 0) 100%
+  );
+  bottom: 0;
+  left: 0;
+}
+
+.Breakfast img,
+.Gym img,
+.Groceries img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  user-select: none;
+}
+
+.Breakfast p,
+.Gym p,
+.Groceries p {
+  position: absolute;
+  bottom: -5px;
+  left: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  user-select: none;
+}
+
+.Categories {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 15px;
+}

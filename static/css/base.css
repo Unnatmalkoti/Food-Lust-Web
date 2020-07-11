@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500&display=swap");
+
+html,
+body {
+  margin: 0;
+  font-family: "poppins", "Arial", sans-serif;
+  background-color: #f8f8f8;
+  min-width: 100vh;
+}
+
+* {
+  overflow: visible;
+}
+nav a,
+nav a:visited {
+  text-decoration: none;
+  color: white;
+}
+.wrapper {
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 50px;
+}
+
+nav {
+  background-color: #ff5887;
+  color: #fff;
+}
+
+nav div {
+  display: flex;
+  align-items: baseline;
+}
+
+nav .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+nav h1 {
+  margin: 0;
+  margin-top: 12px;
+}
+
+nav ul {
+  padding: 0;
+  display: flex;
+  list-style-type: none;
+  margin: 2px;
+  margin-left: 60px;
+}
+
+nav li {
+  padding: 10px;
+  margin: 5px 5px;
+  font-weight: 100;
+  font-size: 15px;
+}
+
+/* CART  */
+
+.cart {
+  height: 100%;
+  width: 400px;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  background: #eeee;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  box-sizing: border-box;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 1px 1px 10px #0003;
+}
+
+.cart.opened {
+  transform: translateX(0);
+}
+
+.close {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.total span {
+  font-weight: 400;
+}
+
+.cart-item-list {
+  list-style: none;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.cart-item strong {
+  font-weight: 400;
+}
+
+.cart-item-qty {
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.cart a {
+  width: 100%;
+  background-color: #ff5887;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  padding: 5px 10px;
+}
+
+.cart-bottom {
+  display: flex;
+  flex-direction: column;
+}
+#user-dropdown {
+  display: none;
+  right: 55px;
+  border-radius: 5px;
+  top: 50px;
+  margin: 0;
+  box-shadow: 1px 1px 10px #0002;
+  flex-direction: column;
+  position: absolute;
+  background-color: #eeee;
+  padding: 10px 20px 10px 10px;
+}
+
+#user-dropdown a {
+  color: black;
+}
+
+#user-dropdown.opened {
+  display: flex;
+}
+
+.user-dropdown-container {
+  overflow: visible;
+  /* position: relative; */
+  display: inline-block;
+}
+
+.user-dropdown-container button {
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  background: transparent;
+  font-family: "poppins";
+}

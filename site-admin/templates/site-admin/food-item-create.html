@@ -1,0 +1,29 @@
+{%extends 'site-admin/base.html'%} 
+{%load static%}
+{%block innerhead%}
+<link rel="stylesheet" href="{%static 'css/site-admin/food-item-create.css'%}" />
+{%endblock%}
+{%block innercontent%}
+
+<section class="food-section">
+  <div class="inner-wrapper">
+    <a class="go-back" onClick="javascript:history.go(-1);">Go back</a>
+    {%if item%}
+        <h1>Edit : {{item.name}}</h1>
+    {%else%}
+        <h1>Create Food Item</h1>
+    {%endif%}
+    <div class="details-container">
+        <form method="POST" class="detail-content">
+            {{form.as_p}}
+            {%csrf_token%}
+            {% if item %}<input type="submit" value="Update"> {% else %} <input type="submit" value="Create">{% endif %}
+        </form>
+
+    </div>
+  </div>
+</section>
+<script>
+    document.getElementById('food-link').classList.add("active");
+</script>
+{%endblock%}

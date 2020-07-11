@@ -1,0 +1,34 @@
+{%extends 'base.html' %}
+{%load static%}
+
+{%block head %}
+<link rel="stylesheet" href="{%static 'css/user/user_base.css'%}">
+    {%block styles%}
+    {%endblock styles%}
+{%endblock head%}
+
+
+
+
+{%block content%}
+<section>
+    <div class="wrapper">
+        <h1 class="page-title">My Orders</h1>
+        <div class="content-wrapper">
+            <aside class="sidetab">
+                <ul>
+                    <li>Profile</li>
+                    <a href="{%url 'my-orders'%}"><li class="active">Orders</li></a>
+                    <li>Saved Addresses</li>
+                    <li>Settings</li>
+                </ul>
+            </aside>
+            <div class="content">
+                {%block innercontent%}
+
+                {%endblock%}
+            </div>        
+        </div>
+    </div>
+</section>
+{%endblock content%}

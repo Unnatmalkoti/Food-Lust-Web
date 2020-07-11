@@ -1,0 +1,48 @@
+.ItemName {
+  font-weight: 600;
+  font-size: 25px;
+  margin-bottom: 0;
+}
+
+.ItemImage {
+  margin-top: 36px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  height: 230px;
+  object-fit: cover;
+}
+
+.QtyPriceDiv {
+  display: flex;
+  justify-content: space-between;
+  margin: 25px 0;
+}
+
+.Price {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.AddToCart {
+  position: fixed;
+  bottom: 90px;
+  width: calc(100% - 80px);
+}
+
+.Serve {
+  margin: 5px 0;
+  color: #959595;
+  font-size: 14px;
+}
+
+.Desc {
+  color: #c4c4c4;
+  font-weight: 200;
+  margin-top: 8px;
+}
+
+.DescTitle {
+  font-size: 18px;
+  margin-bottom: 8px;
+}

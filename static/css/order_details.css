@@ -1,0 +1,88 @@
+main
+{
+    margin-top:100px;
+}
+
+.address,.user-details, .order-details
+{
+    display: grid;
+    grid-template-columns: 200px 200px;
+    margin:15px;
+}
+
+.address :nth-last-of-type(even),
+.user-details :nth-last-of-type(even),
+.order-details :nth-last-of-type(even)
+{
+    font-weight: 400;
+}
+
+.address :nth-last-of-type(odd),
+.user-details :nth-last-of-type(odd),
+.order-details :nth-last-of-type(odd)
+{
+    font-weight: 200;
+}
+
+.cart-summary
+{
+    background-color: #FFF;
+    padding: 45px 35px;
+    width: 300px;
+}
+
+.cart-summary .item
+{
+    font-weight: 300;
+    color: #555;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.gst-item 
+{
+    font-weight: 200;
+    color: #555;
+    display: flex;
+    justify-content: space-between;
+    margin-top:10px;
+    font-size: 13px;
+}
+
+.cart-summary .item .highlight
+{
+    font-weight: 400;
+    padding: 0 5px;
+    color: #FF5887;
+}
+
+.cart-summary .price
+{
+    font-weight: 400;
+}
+
+.total-item
+{
+    background: #FF5887;
+    color: white;
+    margin: 30px -35px -40px -35px;
+    padding: 20px 35px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-box
+{
+    margin-right: 20px;
+    background: white;
+    padding: 30px;
+    width: 60%; 
+
+}
+
+.tabs 
+{
+    display: flex;
+}

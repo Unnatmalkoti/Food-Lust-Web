@@ -1,0 +1,30 @@
+.food-section {
+  margin-top: 80px;
+}
+
+.food-section h1 {
+  font-size: 40px;
+  /* margin-top: 75px; */
+  font-weight: 500;
+}
+
+.itemlist {
+  margin-top: 50px;
+  font-size: 15px;
+}
+
+.itemlist > div,
+.itemlist > form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  color: #555;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 7px 30px;
+}
+
+.itemlist > div.itemlist-header {
+  background-color: white;
+  color: #ff5887;
+  padding: 10px 30px;
+}

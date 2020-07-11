@@ -1,0 +1,36 @@
+.Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 15px;
+  position: relative;
+  border: none;
+
+  text-transform: uppercase;
+  font-size: 16px;
+  font-family: "Open sans";
+  letter-spacing: 0.1em;
+  word-spacing: 0.2em;
+  font-weight: 100;
+  user-select: none;
+  cursor: pointer;
+  transition: filter 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+    transfrom 0.2s ease-in-out;
+}
+
+.Button:hover {
+  filter: brightness(110%);
+  box-shadow: 4px 4px 0px #00000026;
+}
+.Primary {
+  color: white;
+  background-color: #ff5887;
+}
+
+.Spinner {
+  position: absolute;
+  right: 5px;
+  transform: translateY(-50%) scale(0.4);
+  top: 50%;
+}
